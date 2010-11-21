@@ -1,0 +1,1 @@
+/home/adam/go/misc/vim/syntax/go.vim

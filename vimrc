@@ -1,7 +1,7 @@
 filetype off
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
-filetype on
+filetype plugin indent on
 set nocompatible
 set autoindent
 set smartindent
@@ -12,15 +12,15 @@ set showmatch
 set ruler
 set incsearch
 set nobackup
-filetype plugin indent on
 set textwidth=80
 set wrap
 set wrapmargin=4
 set showcmd
 set history=50
-syntax on
 set hlsearch
 set hidden
+set visualbell
+syntax on
 
 " Autoloads .vimrc on save
 if has("autocmd")
@@ -100,6 +100,6 @@ if has("autocmd")
     au ColorScheme * call jeetlib#_UI_StatusLine_DefineSpecialHighlights()
 endif
 set statusline=%!jeetlib#_UI_StatusLine_Compose()
-
+set laststatus=2
 set cursorline
 nmap <leader>c :set<space>cursorcolumn!<CR>
