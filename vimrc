@@ -64,23 +64,24 @@ colorscheme sorcerer
 augroup gap
     au!
     autocmd BufRead,BufNewFile *.g,*.gi,*.gd source ~/.vim/gap.vim
+    autocmd BufRead,BufNewFile *.g,*.gi,*.gd source ~/.vim/indent/gap.vim
     autocmd BufRead,BufNewFile *.g,*.gi,*.gd set filetype=gap comments=s:##\ \ ,m:##\ \ ,e:##\ \ b:#
-    
-
 
 " Use PAR to format comment lines starting with ##
     autocmd BufRead,BufNewFile *.g,*.gi,*.gd set formatprg="par w76p4s0j"
     autocmd BufWritePost,FileWritePost *.g,*.gi,*.gd set formatprg="par w76p4s0j"
 augroup End
 
-au! Syntax gap source /usr/share/vim/vimcurrent/syntax/gap.vim
+au! Syntax gap source /usr/share/vim/vim72/syntax/gap.vim
 
 " Remove menu and toolbar from gui
 set guioptions-=m
 set guioptions-=T
+set guioptions=ac
 
 " Use ,n to switch buffer
 nmap <leader>n :bn<CR>
+nmap <leader>d <ESC>:bdelete<CR>
 
 " Use ,<space> to remove highlighting
 nmap <leader><space> :noh<CR>
@@ -103,3 +104,6 @@ set statusline=%!jeetlib#_UI_StatusLine_Compose()
 set laststatus=2
 set cursorline
 nmap <leader>c :set<space>cursorcolumn!<CR>
+
+" Map F2 to NERDTree
+map <F2> :NERDTreeToggle<CR>
